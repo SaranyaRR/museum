@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticket_id: MyString
+  event_type: MyString
+  timestamp: 2016-08-25 14:35:17
+
+two:
+  ticket_id: MyString
+  event_type: MyString
+  timestamp: 2016-08-25 14:35:17

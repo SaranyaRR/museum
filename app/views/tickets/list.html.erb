@@ -1,0 +1,25 @@
+<% if @tickets.present? %>
+  <h3> Tickets listing </h3>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Ticket Id</th>
+        <th>Entry time</th>
+        <th>Exit time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tickets.each do |ticket| %>
+        <tr>
+          <td><%= ticket.ticket_id %></td>
+          <td><%= ticket.in_time %></td>
+          <td><%= ticket.out_time %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br/><br/>
+<% else %>
+  <h3> No tickets to display. </h3>
+<% end %>
+<%= link_to 'Back to home', tickets_path  %>

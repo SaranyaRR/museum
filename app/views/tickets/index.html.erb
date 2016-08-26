@@ -1,0 +1,41 @@
+
+<h2> Museum ticket statistics </h2>
+
+
+<%= flash[:notice] %>
+</br>
+<div>
+	<h4> Tickets CSV File Import </h4>
+Please choose the Tickets CSV file with the following fields ( ticked_id, event_type, timestamp). <br/><br/>
+  <%= form_tag import_tickets_path, multipart: true do %>
+    <%= file_field_tag :file, accept: 'text/csv' %> 
+    <%= submit_tag "Import CSV" %>
+  <% end %>
+</div>
+<br/><br/>
+<h4> Ticket statistics</h4>
+ Please choose date and time from the DateTime picker below to know number of people in the museum at that time.<br/><br/>
+<%= form_tag search_tickets_path, multipart: true do %>
+
+  <div class="row">
+    <div class='col-sm-2'>
+      <div class="form-group">
+        	<div class='date-group input-group' id='datetimepicker1'>
+          <span class="input-group-addon">
+          	<span class="glyphicon glyphicon-calendar"></span>
+          </span>
+          <%= text_field_tag :search_date_time, nil, class: 'form-control', data: { date_format: 'YYYY/MM/DD hh:mm A' }, required: true %>
+       
+        	</div>
+      	  <%= submit_tag "Find tickets" %>
+      </div>
+    </div>
+  </div>
+
+<% end %>
+
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker1').datetimepicker();
+  });
+</script>
