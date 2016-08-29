@@ -1,9 +1,5 @@
-
-<h2> Museum ticket statistics </h2>
-
-
-<%= "#{@message}" %>
-
+<br/><br/>
+<%= "#{@tickets.count} people were present in the museum in the given time." %>
 <% if @tickets.present? %>
   <h3> Tickets listing </h3>
   <table border="1">
